@@ -1,0 +1,13 @@
+int maxArea(vector<int>& nums) {
+        int n = nums.size();
+        int l = 0, r = n-1;
+        int maxi = 0;
+        while(l < r)
+        {
+            int area = min(nums[l], nums[r]) * (r - l);
+            maxi = max(maxi, area);
+            if(nums[l] > nums[r]) r--;
+            else l++;
+        }
+        return maxi;
+    }
