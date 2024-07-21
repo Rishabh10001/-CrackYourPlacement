@@ -1,0 +1,15 @@
+int maxScore(vector<int>& nums, int k) {
+        int n = nums.size();
+        int left = 0, right = 0, sum = 0, temp = INT_MAX, total = 0;
+        for(int i = 0;i<n;i++) total += nums[i];
+        while(right != n)
+        {
+            while(right - left != n - k)
+            {
+                sum += nums[right++];
+            }
+            temp = min(temp, sum);
+            sum -= nums[left++];
+        }
+        return total - temp;
+    }
