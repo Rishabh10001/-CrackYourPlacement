@@ -1,0 +1,14 @@
+int strStr(string haystack, string needle) {
+        int n = haystack.size();
+        int t = needle.size();
+        int ans = -1;
+        int left = 0 ,right = 0;
+        string temp;
+        while(left + t - 1 < n) 
+        {
+           temp = haystack.substr(left, t);
+           if(temp == needle) return left;
+           left++;
+        }
+        return ans;
+    }
