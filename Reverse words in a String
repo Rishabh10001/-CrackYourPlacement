@@ -1,0 +1,22 @@
+string reverseWords(string s) {
+        int n = s.size();
+        int i = 0;
+        vector<string> vec;
+        while(i != n)
+        {
+            string x;
+            while(i<n && s[i] != ' ')
+            {
+                x += s[i++];
+            }
+            if(x.size() > 0) vec.push_back(x);
+            if(s[i] == ' ') i++;
+        }
+        string x;
+        for(int i = vec.size()-1;i>=0;i--)
+        {
+            x += vec[i];
+            if(i>0) x += ' ';
+        }
+        return x;
+    }
