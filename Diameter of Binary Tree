@@ -1,0 +1,13 @@
+int maxi = 0;
+    int diameterOfBinaryTree(TreeNode* root) {
+        height(root);
+        return maxi;
+    }
+    int height(TreeNode* root)
+    {
+        if(root == NULL) return 0;
+        int left = height(root->left);
+        int right = height(root->right);
+        maxi = max(maxi, left + right);
+        return 1 + max(left, right);
+    }
